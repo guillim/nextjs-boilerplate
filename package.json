@@ -3,6 +3,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -26,7 +27,9 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "20.14.8",
     "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0"
+    "@types/react-dom": "18.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13"
   },
   "engines": {
     "node": ">=20.12.0"

@@ -51,6 +51,11 @@ It's documented to guide you through the process of customizing it.
 It's React for the frontend, with TailwindCSS for the design.
 It's going to be hosted on Vercel, but you can change it if you want.
 
+#### VScode
+
+We recommend using VScode for the project, as it's the most popular editor for web development.
+ESlint is automatic on save to get a better developer experience.
+
 ### Thanks
 
 It's based on the Next.js (App Router) starter template.
