@@ -14,7 +14,7 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 - 📚 Documentation
 - 🫂 Customer support
 - 📱 Responsive
-- 📂 Postgres with Supabase
+- 📂 Postgres with Prisma
 - 🛠️ Customizable
 
 ### Why
@@ -46,7 +46,7 @@ I tried to reduce the costs to `0 $` so that you can iterate on 10 products with
 
 It's all Typescript
 It's the App Router type of Next.js project
-It uses Postgres, hosted on Supabase for the database, but you can change it if you want.
+It uses Postgres, hosted on Neon for the database, but you can change it if you want.
 It's documented to guide you through the process of customizing it.
 It's React for the frontend, with TailwindCSS for the design.
 It's going to be hosted on Vercel, but you can change it if you want.
@@ -65,9 +65,13 @@ To host your code on Github, please follow this [guide](https://help.github.com/
 
 Visit [vercel](https://vercel.com/signup) to create an account. Choose the free "hobby" plan. Select Continue with GitHub to connect your GitHub and Vercel accounts. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database) if you are stuck
 
-#### Supabase
+#### Neon
 
-We do not chose Vercel Postgresql because it's not free. Supabase is a great alternative, and it's free. Visit [supabase](https://supabase.io/) to create an account. Choose the free plan. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
+We do not chose Vercel Postgresql because it's not free. Neon is a great alternative, and it's free. Visit [supabase](https://neon.tech/) to create an account. Choose the free plan. Read [this page](https://neon.tech/docs/guides/nextjs)
+
+We user [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql) to connect to the database. Very useful to be error-proof.
+
+More info in our [prisma/README.md file](prisma/README.md)
 
 ### Thanks
 
