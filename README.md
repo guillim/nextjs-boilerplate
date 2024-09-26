@@ -50,11 +50,24 @@ It uses Postgres, hosted on Supabase for the database, but you can change it if 
 It's documented to guide you through the process of customizing it.
 It's React for the frontend, with TailwindCSS for the design.
 It's going to be hosted on Vercel, but you can change it if you want.
+It will be automatically deployed on git push, no worries about that, focus on code.
 
 #### VScode
 
 We recommend using VScode for the project, as it's the most popular editor for web development.
 ESlint is automatic on save to get a better developer experience.
+
+#### Github Repository
+
+To host your code on Github, please follow this [guide](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
+
+#### Vercel
+
+Visit [vercel](https://vercel.com/signup) to create an account. Choose the free "hobby" plan. Select Continue with GitHub to connect your GitHub and Vercel accounts. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database) if you are stuck
+
+#### Supabase
+
+We do not chose Vercel Postgresql because it's not free. Supabase is a great alternative, and it's free. Visit [supabase](https://supabase.io/) to create an account. Choose the free plan. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
 
 ### Thanks
 
