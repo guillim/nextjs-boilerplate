@@ -14,7 +14,7 @@ All commands are available in the [Prisma documentation](https://www.prisma.io/d
 
 ### Schema / Models
 
-- At first, we want to run `npx prisma migrate dev --name init` to creates SQL migration & run this migration file. It will init your Postgres database.
+- At first, we want to run `npx prisma migrate dev --name init` to creates SQL migration & run this migration file. It will init your Postgres database. You may sometimes need to run `npx prisma generate` for the prisma client.
 
 - We already created basics in the directory called `prisma`. Check out the file called `schema.prisma`, which contains your models. This is where you can define your database tables, and update it.
 

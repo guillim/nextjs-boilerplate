@@ -10,10 +10,11 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  name     String
-  email    String
-  password String
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  password  String
+  updatedAt DateTime @default(now())
 }
 
 model Customer {
