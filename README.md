@@ -5,7 +5,9 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 ### Main Features
 
 - ☀️ Free
+- 👁️ Landing page
 - 💰 Stripe for payments + Charts
+- 🍾 Referal program
 - 📧 Mailgun
 - 📈 Google Analytics
 - 📱 NextAuth
@@ -72,6 +74,10 @@ We do not chose Vercel Postgresql because it's not free. Neon is a great alterna
 We user [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql) to connect to the database. Very useful to be error-proof.
 
 More info in our [prisma/README.md file](prisma/README.md)
+
+#### Landing Page
+Once you run the project, you can access the landing page at `http://localhost:3000/landing-page`
+Feel free to customize it as you want.
 
 ### Thanks
 
