@@ -13,12 +13,9 @@ export class CreateUser {
   async createUser(user: Omit<UserProps, 'id' | 'updatedAt'>): Promise<User> {
     // check if the user already exists
     const userFound = await new UserRepository().getUserByEmail(user.email);
-    console.log('userFound:', userFound);
     if (userFound) {
-      console.log('in userFound');
       throw new Error('User already exists');
     }
-    console.log('after userFound');
     const newUser = await new UserRepository().createUser(user);
     return newUser;
   }
