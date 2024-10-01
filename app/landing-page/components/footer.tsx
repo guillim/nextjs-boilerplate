@@ -20,7 +20,7 @@ export default function Footer() {
                   </svg>
                 </Link>
               </div>
-              <div className="text-gray-400">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+              <div className="text-gray-400">Thanks to Cruip for the template of this orignial landing page https://open.cruip.com/ .</div>
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
