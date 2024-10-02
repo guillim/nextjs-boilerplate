@@ -6,18 +6,20 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 
 - ☀️ Free
 - 👁️ Landing page
-- 💰 Stripe for payments + Charts
-- 🍾 Referal program
-- 📧 Mailgun
+- 🔑 Google SSO (NextAuth)
+- 💰 Stripe for payments + Charts ⏳
+- 📂 Postgres with Prisma 
 - 📈 Google Analytics
-- 📱 NextAuth
-- 📦 SEO
-- 📝 Blog
-- 📚 Documentation
-- 🫂 Customer support
+- 📧 Mailgun ⏳
+- 📦 SEO ⏳
+- 📝 Blog ⏳
+- 📚 Documentation ⏳
+- 🫂 Customer support ⏳
 - 📱 Responsive
-- 📂 Postgres with Prisma
+- 🍾 Referal program ⏳
 - 🛠️ Customizable
+
+⏳: Coming soon
 
 ### Why
 
@@ -87,6 +89,10 @@ We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introdu
 #### Stripe
 We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
 Stripe is always attached to a company. That is why for every user, there is automatically a company created for him. This way, it's easier to manage the payments, and easier to switch gather users to one company.
+
+#### Google Analytics
+We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the .env file
+
 
 ### Thanks
 

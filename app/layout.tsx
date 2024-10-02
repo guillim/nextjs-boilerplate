@@ -1,6 +1,7 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
+import GoogleAnalyticsWrapper from '../infra/googleAnalytics';
  
 export const metadata: Metadata = {
   title: {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
+      <GoogleAnalyticsWrapper />
     </html>
   );
 }
