@@ -1,9 +1,10 @@
 // clean architecture : repository layer is where you want to put all your database logic, this way you could easily change the database without changing the use-case logic
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
 import { UserPort } from './user.port';
 import { User, UserProps } from './user.entity';
+import { prismaClientGlobal } from '@/infra/prisma';
 
-const prisma = new PrismaClient();
+const prisma = prismaClientGlobal;
 
 export class UserRepository implements UserPort {
   async getUserById(id: string): Promise<User | undefined> {

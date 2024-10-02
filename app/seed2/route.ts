@@ -1,4 +1,4 @@
-import { CreateUser } from '../user/use-case';
+import { CreateUser } from '../../domain/user/use-case';
 
 export async function GET() {
   try {

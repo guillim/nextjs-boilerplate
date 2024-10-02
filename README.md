@@ -77,7 +77,16 @@ More info in our [prisma/README.md file](prisma/README.md)
 
 #### Landing Page
 Once you run the project, you can access the landing page at `http://localhost:3000/landing-page`
-Feel free to customize it as you want.
+Feel free to customize it as you want (folder `/landing-page`).
+
+#### Auth
+Google Auth is already set up. To use it. please follow this [guide](https://authjs.dev/getting-started/authentication/oauth) TLDR, it begins with creating a project on the [Google Cloud Platform](https://console.cloud.google.com/apis/credentials).  
+
+We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introduction) for other easy ways to authenticate users (google, twitter, github...)
+
+#### Stripe
+We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
+Stripe is always attached to a company. That is why for every user, there is automatically a company created for him. This way, it's easier to manage the payments, and easier to switch gather users to one company.
 
 ### Thanks
 

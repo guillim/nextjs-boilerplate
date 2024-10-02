@@ -1,5 +1,5 @@
 import { lusitana } from '@/app/ui/fonts';
-import { GetUserByEmail } from '../../user/use-case';
+import { GetUserByEmail } from '../../../domain/user/use-case';
  
 export default async function Page() {
   // const revenue = await fetchRevenue();
@@ -7,7 +7,6 @@ export default async function Page() {
   const user = await new GetUserByEmail().getUserByEmail('test@test.test');
   await new Promise((resolve) => setTimeout( x => resolve(x), 2000));
 
-  console.log(user);
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>

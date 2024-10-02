@@ -1,7 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
 import { customers, users } from '../lib/placeholder-data';
+import { prismaClientGlobal } from '@/infra/prisma';
 
-const prisma = new PrismaClient();
+const prisma = prismaClientGlobal
 
 export async function seedUsers() {
   try {
