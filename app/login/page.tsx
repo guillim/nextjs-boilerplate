@@ -5,7 +5,6 @@ import { PowerIcon } from '@heroicons/react/24/outline';
 
 export default async function LoginPage() {
   const user = await auth();
-  console.log(user);
   const name = user?.user?.name || user?.user?.email;
   return (
     <main className="flex items-center justify-center md:h-screen">
