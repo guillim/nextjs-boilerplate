@@ -88,7 +88,7 @@ We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introdu
 
 #### Stripe
 We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
-Stripe is always attached to a company. That is why for every user, there is automatically a company created for him. This way, it's easier to manage the payments, and easier to switch gather users to one company.
+Stripe is always attached to a company. That is why for every user, there is automatically a company created for him. This way, it's easier to manage the payments, and easier to gather users later on to one company.
 
 #### Google Analytics
 We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the .env file
