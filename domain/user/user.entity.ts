@@ -1,9 +1,10 @@
 export interface UserProps {
   id: string;
-  name: string;
+  name?: string | null;
   email: string;
-  password: string;
-  // createdAt: Date;
+  emailVerified?: Date | null;
+  image?: string | null;
+  createdAt: Date;
   updatedAt: Date;
 }
 

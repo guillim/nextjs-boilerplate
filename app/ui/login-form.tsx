@@ -1,10 +1,9 @@
-
 import { lusitana } from '@/app/ui/fonts';
 import { signIn } from '@/auth';
 import Image from 'next/image';
 
  
-export default function LoginForm() {
+export default async function LoginForm() {
   return (
     <form 
       action={async () => {

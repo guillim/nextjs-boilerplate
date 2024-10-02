@@ -10,7 +10,7 @@ export class GetUser {
 }
 
 export class CreateUser {
-  async createUser(user: Omit<UserProps, 'id' | 'updatedAt'>): Promise<User> {
+  async createUser(user: Omit<UserProps, 'id' | 'updatedAt' | 'createdAt' | 'emailVerified' | 'image'>): Promise<User> {
     // check if the user already exists
     const userFound = await new UserRepository().getUserByEmail(user.email);
     if (userFound) {

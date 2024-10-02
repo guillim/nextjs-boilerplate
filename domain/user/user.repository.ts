@@ -20,8 +20,10 @@ export class UserRepository implements UserPort {
       id: userRecord.id,
       name: userRecord.name,
       email: userRecord.email,
-      password: userRecord.password,
       updatedAt: userRecord.updatedAt,
+      createdAt: userRecord.createdAt,
+      emailVerified: userRecord.emailVerified,
+      image: userRecord.image,
     });
   }
 
@@ -38,17 +40,18 @@ export class UserRepository implements UserPort {
       id: userRecord.id,
       name: userRecord.name,
       email: userRecord.email,
-      password: userRecord.password,
-      updatedAt: userRecord.updatedAt
+      updatedAt: userRecord.updatedAt,
+      createdAt: userRecord.createdAt,
+      emailVerified: userRecord.emailVerified,
+      image: userRecord.image,
     });
   }
 
-  async createUser(user: Omit<UserProps, 'id' | 'updatedAt'>): Promise<User> {
+  async createUser(user: Omit<UserProps, 'id' | 'updatedAt' | 'createdAt' | 'emailVerified' | 'image'>): Promise<User> {
     const userRecord = await prisma.user.create({
       data: {
         name: user.name,
         email: user.email,
-        password: user.password,
         updatedAt: new Date(),
       },
     });
@@ -57,8 +60,10 @@ export class UserRepository implements UserPort {
       id: userRecord.id,
       name: userRecord.name,
       email: userRecord.email,
-      password: userRecord.password,
       updatedAt: userRecord.updatedAt,
+      createdAt: userRecord.createdAt,
+      emailVerified: userRecord.emailVerified,
+      image: userRecord.image,
     });
   }
 
