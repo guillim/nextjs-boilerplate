@@ -4,14 +4,13 @@ import { prismaClientGlobal } from '@/infra/prisma';
 
 const prisma = prismaClientGlobal
 
-export async function seedUsers() {
+async function seedUsers() {
   try {
     await prisma.user.createMany({
       data: users.map(user => ({
         id: user.id,
         name: user.name,
-        email: user.email,
-        password: user.password, // You should hash the password before inserting
+        email: user.email
       })),
     });
     console.log('Seeded users');
@@ -20,7 +19,7 @@ export async function seedUsers() {
   }
 }
 
-export async function seedCustomers() {
+async function seedCustomers() {
   try {
     await prisma.customer.createMany({
       data: customers.map(customer => ({

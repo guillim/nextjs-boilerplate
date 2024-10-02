@@ -4,8 +4,7 @@ export async function GET() {
   try {
     await new CreateUser().createUser({
       name: 'John Doe',
-      email: 'test2@test.test',
-      password: 'password',
+      email: 'test2@test.test'
     });
 
     return new Response(JSON.stringify({ message: 'Users created successfuly' }), { status: 200 });
