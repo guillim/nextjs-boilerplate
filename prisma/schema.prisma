@@ -17,6 +17,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[] 
+  company       Company?   @relation(fields: [companyId], references: [id])
+  companyId     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
 }
@@ -28,6 +30,14 @@ model Customer {
   imageUrl String?
 }
 
+model Company {
+  id          String    @id @default(cuid())
+  name        String
+  stripeId    String?   // Stripe customer ID
+  users       User[]    @relation
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt @default(now())
+}
 model Account {
   userId            String
   type              String
@@ -66,4 +76,3 @@ model VerificationToken {
  
   @@id([identifier, token])
 }
- 

@@ -52,7 +52,7 @@ export class UserRepository implements UserPort {
       data: {
         name: user.name,
         email: user.email,
-        updatedAt: new Date(),
+        updatedAt: new Date()
       },
     });
 
@@ -64,6 +64,21 @@ export class UserRepository implements UserPort {
       createdAt: userRecord.createdAt,
       emailVerified: userRecord.emailVerified,
       image: userRecord.image,
+    });
+  }
+
+  async updateUser(user: User, newUserProps: Omit<UserProps, 'id' | 'createdAt'>): Promise<User> {
+    const userRecord = await prisma.user.update({
+      where: { id: user.id() },
+      data: {
+        ...user.props,
+        ...newUserProps,
+        updatedAt: new Date(),
+      },
+    });
+
+    return new User({
+      ...userRecord
     });
   }
 

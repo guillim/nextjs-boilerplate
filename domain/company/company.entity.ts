@@ -1,8 +1,10 @@
 export interface CompanyProps {
   id: string;
   name: string;
-  // createdAt: Date;
+  stripeId?: string;
+  createdAt: Date;
   updatedAt: Date;
+  users?: string[];
 }
 
 export class Company {

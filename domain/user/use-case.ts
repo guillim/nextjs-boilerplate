@@ -1,4 +1,6 @@
 // clean architecture : use-case layer is where you want to put all your logic, because it will be easily testable and maintanalbe
+import { Company } from '../company/company.entity';
+import { CreateCompany } from '../company/use-case';
 import { User, UserProps } from './user.entity';
 import { UserRepository } from './user.repository';
 
@@ -16,8 +18,11 @@ export class CreateUser {
     if (userFound) {
       throw new Error('User already exists');
     }
+    // before we create the user, let's create its company
+    const company = await new CreateCompany().createCompany(user.email.split('@')[0]);
     const newUser = await new UserRepository().createUser(user);
-    return newUser;
+    const newUserUpdated = await new UpdateUser().linkCompany(newUser, company);
+    return newUserUpdated;
   }
 }
 
@@ -26,5 +31,13 @@ export class GetUserByEmail {
   async getUserByEmail(email: string): Promise<User | undefined> {
     const user = await new UserRepository().getUserByEmail(email);
     return user;
+  }
+}
+
+export class UpdateUser {
+  async linkCompany(user: User, company: Company): Promise<User> {
+    const newUserProps = { ...user.props, companyId: company.id() };
+    const updatedUser = await new UserRepository().updateUser(user, newUserProps);
+    return updatedUser;
   }
 }
