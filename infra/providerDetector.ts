@@ -25,4 +25,9 @@ export const providersList = {
     isAvailable: true,
     optional: false,
   },
+  stripe: {
+    name: "Stripe",
+    isAvailable: process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY !== undefined,
+    optional: true,
+  },
 }

@@ -88,7 +88,17 @@ We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introdu
 
 #### Stripe
 We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
-Stripe is always attached to a company. That is why for every user, there is automatically a company created for him. This way, it's easier to manage the payments, and easier to gather users later on to one company.
+To make things simpler, Stripe is related to a company, not a user here. So, for every user, a company is automatically created. 
+
+For setup, read this [Stripe Tutorial](https://medium.com/@rakeshdhariwal61/integrating-stripe-payment-gateway-in-next-js-14-a-step-by-step-guide-1bd17d164c2c). Use [the Stripe test card](https://docs.stripe.com/testing) for testing.
+
+Here, you simply need to add this button to make the payment work:
+```react
+<SubscribeComponent 
+        priceId="price_1Q6U4ZP9VWutz4pQA1UC2ilX" 
+        price="10" 
+        description="Basic Plan" />
+```
 
 #### Google Analytics
 We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the .env file
