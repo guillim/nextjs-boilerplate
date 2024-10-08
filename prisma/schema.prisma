@@ -23,13 +23,6 @@ model User {
   updatedAt DateTime @updatedAt @default(now())
 }
 
-model Customer {
-  id       String  @id @default(uuid())
-  name     String
-  email    String?
-  imageUrl String?
-}
-
 model Company {
   id          String    @id @default(cuid())
   name        String
