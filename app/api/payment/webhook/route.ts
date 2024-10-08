@@ -1,9 +1,12 @@
 import Stripe from 'stripe';
 import { NextRequest } from 'next/server';
 import { headers } from 'next/headers';
+import { RegisterTransaction } from '@/domain/company/use-case';
+
 type METADATA = {
   userId: string;
   priceId: string;
+  companyId: string;
 };
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -32,21 +35,33 @@ export async function POST(request: NextRequest) {
   const metadata = data.metadata as METADATA;
   const userId = metadata.userId;
   const priceId = metadata.priceId;
+  const companyId = metadata.companyId;
   const created = data.created;
   const currency = data.currency;
   const customerDetails = data.customer_details;
   const amount = data.amount_total;
-  const transactionDetails = {
+
+  const transactionDetails: any = {
     userId,
     priceId,
+    companyId,
     created,
     currency,
     customerDetails,
     amount,
   };
+
+  if (!transactionDetails.amount){ delete transactionDetails.amount; }
+  if (!transactionDetails.currency){ delete transactionDetails.currency; }
+  if (!transactionDetails.created){ delete transactionDetails.created; }
+  if (!transactionDetails.customerDetails){ delete transactionDetails.customerDetails; }
+  
   try {
     // database update here
-    console.log('Transaction Details', transactionDetails);
+    const registerTransaction = new RegisterTransaction();
+    if(!transactionDetails) throw new Error('Transaction details not found');
+    await registerTransaction.registerTransaction(transactionDetails);
+    // console.log('Transaction Details', transactionDetails);
     return new Response('Subscription added', {
       status: 200
     });

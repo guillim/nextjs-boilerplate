@@ -33,8 +33,8 @@ model Customer {
 model Company {
   id          String    @id @default(cuid())
   name        String
-  stripeId    String?   // Stripe customer ID
   users       User[]    @relation
+  transactions PaymentTransaction[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt @default(now())
 }
@@ -75,4 +75,13 @@ model VerificationToken {
   expires    DateTime
  
   @@id([identifier, token])
+}
+
+model PaymentTransaction {
+  id            String    @id @default(cuid())
+  company       Company   @relation(fields: [companyId], references: [id])
+  companyId     String
+  raw           Json
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt @default(now())
 }
