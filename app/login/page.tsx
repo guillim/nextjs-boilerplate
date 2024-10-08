@@ -1,8 +1,9 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import LoginForm from '@/app/ui/login-form';
 import { auth } from '@/auth';
-import { HomeIcon, PowerIcon } from '@heroicons/react/24/outline';
+import { HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import LogoutButton from '../ui/logout-button';
 
 export default async function LoginPage() {
   const user = await auth();
@@ -17,19 +18,13 @@ export default async function LoginPage() {
         </div>
         {!!user ? (
           <div>
-            <button
-              className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
-              title={name ?? undefined}
-            >
-              <PowerIcon className="w-6" />
-              <div className="hidden md:block">Sign Out {name}</div>
-            </button>
+            <LogoutButton />
             <Link 
               href="/"
               className="mt-3 flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
             >            
               <HomeIcon className="w-6" />
-              <div className="hidden md:block">Home</div>
+              <div className="hidden md:block" title={name || ''}>Home</div>
 
             </Link>
           </div>
