@@ -12,12 +12,9 @@ export async function POST(request: NextRequest) {
   const endpointSecret = process.env.STRIPE_SECRET_WEBHOOK_KEY!;
   const sig = headers().get('stripe-signature') as string;
   let event: Stripe.Event;
-  console.log('Webhook received');
   try {
     event = stripe.webhooks.constructEvent(body, sig, endpointSecret);
-    console.log('event',event);
   } catch (err) {
-    console.log('Webhook Error', err);
     return new Response(`Webhook Error: ${err}`, {
       status: 400
     });
@@ -28,7 +25,7 @@ export async function POST(request: NextRequest) {
     eventType !== 'checkout.session.completed' &&
     eventType !== 'checkout.session.async_payment_succeeded'
   )
-    return new Response('Server Error', {
+    return new Response(`Server Error for unhandled eventType ${eventType}`, {
       status: 500
     });
   const data = event.data.object;

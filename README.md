@@ -92,7 +92,7 @@ To make things simpler, Stripe is related to a company, not a user here. So, for
 
 For setup, read this [Stripe Tutorial](https://medium.com/@rakeshdhariwal61/integrating-stripe-payment-gateway-in-next-js-14-a-step-by-step-guide-1bd17d164c2c). Use [the Stripe test card](https://docs.stripe.com/testing) for testing.
 
-Here, you simply need to add this button to make the payment work:
+Here, you simply need to add this button to make the payment work (change for the correct priceId):
 ```react
 <SubscribeComponent 
         priceId="price_1Q6U4ZP9VWutz4pQA1UC2ilX" 
