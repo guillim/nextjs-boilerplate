@@ -7,7 +7,7 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 - ☀️ Free
 - 👁️ Landing page
 - 🔑 Google SSO (NextAuth)
-- 💰 Stripe for payments + Charts ⏳
+- 💰 Stripe for payments
 - 📂 Postgres with Prisma 
 - 📈 Google Analytics
 - 📧 Mailgun ⏳
@@ -108,3 +108,5 @@ We use Google Analytics to track the users. Please create an account here [Googl
 
 It's based on the Next.js (App Router) starter template.
 For customisation, see the [course](https://nextjs.org/learn) on the Next.js Website.
+
+setup test for usecasess
