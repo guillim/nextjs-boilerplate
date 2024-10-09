@@ -8,9 +8,9 @@ export const authConfig = {
   },
   // debug: process.env.NODE_ENV !== "production" ? true : false,
   callbacks: {
-    authorized({ auth, request }) {
+    authorized({ auth }) {
       // Logged in users are authenticated, otherwise redirect to login page
-      return auth && !!auth.user
+      return (auth && !!auth.user) ? true : false;
     },
     async jwt({ token, account, user, trigger }) {
       if (trigger === 'signUp') {
