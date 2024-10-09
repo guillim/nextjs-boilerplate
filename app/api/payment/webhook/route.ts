@@ -2,6 +2,7 @@ import Stripe from 'stripe';
 import { NextRequest } from 'next/server';
 import { headers } from 'next/headers';
 import { RegisterTransaction } from '@/domain/company/use-case';
+import { TransactionProps, CustomerDetails } from '@/domain/company/company.entity';
 
 type METADATA = {
   userId: string;
@@ -31,30 +32,29 @@ export async function POST(request: NextRequest) {
     return new Response(`Server Error for unhandled eventType ${eventType}`, {
       status: 500
     });
-  const data = event.data.object;
+  const data = event.data.object
   const metadata = data.metadata as METADATA;
   const userId = metadata.userId;
   const priceId = metadata.priceId;
   const companyId = metadata.companyId;
   const created = data.created;
   const currency = data.currency;
-  const customerDetails = data.customer_details;
+  const customerDetails = data.customer_details as unknown as CustomerDetails;
   const amount = data.amount_total;
 
-  const transactionDetails: any = {
+  const transactionDetails: TransactionProps = {
     userId,
     priceId,
     companyId,
-    created,
-    currency,
-    customerDetails,
-    amount,
   };
 
-  if (!transactionDetails.amount){ delete transactionDetails.amount; }
-  if (!transactionDetails.currency){ delete transactionDetails.currency; }
-  if (!transactionDetails.created){ delete transactionDetails.created; }
-  if (!transactionDetails.customerDetails){ delete transactionDetails.customerDetails; }
+  if (amount){ transactionDetails.amount = amount; }
+  if (currency){ transactionDetails.currency = currency; }
+  if (created){ transactionDetails.created = created; }
+  if(customerDetails){
+    transactionDetails.customerDetails = customerDetails
+  }
+  
   
   try {
     // database update here

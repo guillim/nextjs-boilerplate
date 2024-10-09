@@ -5,14 +5,14 @@ export interface CompanyProps {
   updatedAt: Date;
 }
 
-interface CustomerDetails {
+export interface CustomerDetails {
   address?: {
-    city: string | null;
-    country: string;
-    line1: string | null;
-    line2: string | null;
-    postal_code: string | null;
-    state: string | null;
+    city?: string | null;
+    country?: string;
+    line1?: string | null;
+    line2?: string | null;
+    postal_code?: string | null;
+    state?: string | null;
   };
   email?: string;
   name?: string;
@@ -25,10 +25,10 @@ export interface TransactionProps {
     userId?: string;
     companyId?: string;
     priceId?: string;
-    created: number;
-    currency: string;
+    created?: number;
+    currency?: string;
     customerDetails?: CustomerDetails;
-    amount: number;
+    amount?: number;
   }
 
 export class Company {
