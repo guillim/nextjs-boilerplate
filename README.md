@@ -7,7 +7,7 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 - ☀️ Free
 - 👁️ Landing page
 - 🔑 Google SSO (NextAuth)
-- 💰 Stripe for payments + Charts ⏳
+- 💰 Stripe for payments
 - 📂 Postgres with Prisma 
 - 📈 Google Analytics
 - 📧 Mailgun ⏳
@@ -108,7 +108,7 @@ To make things simpler, Stripe is related to a company, not a user here. So, for
 
 For setup, read this [Stripe Tutorial](https://medium.com/@rakeshdhariwal61/integrating-stripe-payment-gateway-in-next-js-14-a-step-by-step-guide-1bd17d164c2c). Use [the Stripe test card](https://docs.stripe.com/testing) for testing.
 
-Here, you simply need to add this button to make the payment work:
+Here, you simply need to add this button to make the payment work (change for the correct priceId):
 ```react
 <SubscribeComponent 
         priceId="price_1Q6U4ZP9VWutz4pQA1UC2ilX" 
@@ -124,3 +124,5 @@ We use Google Analytics to track the users. Please create an account here [Googl
 
 It's based on the Next.js (App Router) starter template.
 For customisation, see the [course](https://nextjs.org/learn) on the Next.js Website.
+
+setup test for usecasess

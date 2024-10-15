@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build",
+    "//": "build : we need to add prisma generate due to vercel deployment", 
+    "build": "prisma generate && next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"

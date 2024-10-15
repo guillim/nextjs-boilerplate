@@ -9,7 +9,7 @@ type props = {
   description:string;
 };
 
-const SubscribeComponent= ({ priceId, price, description }: props) => {
+const SubscribeComponent= ({ priceId }: props) => {
   const handleSubmit = async () => {
     const stripe = stripeInstance.getStripe();
     if (!stripe) {
