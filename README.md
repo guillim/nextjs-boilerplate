@@ -14,7 +14,7 @@ Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 
 - 📦 SEO ⏳
 - 📝 Blog ⏳
 - 📚 Documentation ⏳
-- 🫂 Customer support ⏳
+- 🫂 Customer support (chatwoot) ⏳
 - 📱 Responsive
 - 🍾 Referal program ⏳
 - 🛠️ Customizable
@@ -38,7 +38,7 @@ As calculated by Marc Lou, the great inspiration for this project, the time save
 
 ### Pricing
 
-Forever **Free**
+This boilerplate is forever **Free**
 
 But if you want to support the project, you can [buy me a coffee ☕️](https://patreon.com/guillim).
 
@@ -46,7 +46,23 @@ But if you want to support the project, you can [buy me a coffee ☕️](https:/
 
 I tried to reduce the costs to `0 $` so that you can iterate on 10 products without ruining yourself !
 
-### Tech Stack
+## Get Started
+Install dependencies :
+```bash
+pnpm install
+```
+Run the project :
+```bash
+pnpm run dev
+```
+open [http://localhost:3000/landing-page](http://localhost:3000/landing-page) to see the result
+
+#### Production
+For production, we recommend using vercel (see below)
+```bash
+pnpm run build
+```
+## Tech Stack
 
 It's all Typescript
 It's the App Router type of Next.js project
