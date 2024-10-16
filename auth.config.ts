@@ -8,7 +8,9 @@ export const authConfig = {
   },
   // debug: process.env.NODE_ENV !== "production" ? true : false,
   callbacks: {
-    authorized({ auth }) {
+    authorized({ auth, request }) {
+      // if visiting landing page, it's ok
+      if (request.nextUrl.pathname === '/landing-page') return true
       // Logged in users are authenticated, otherwise redirect to login page
       return (auth && !!auth.user) ? true : false;
     },
