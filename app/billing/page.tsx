@@ -4,6 +4,7 @@ import { auth } from '@/auth';
 export default async function Page({ searchParams }: { searchParams: { [key: string]: string } }) {
   const user = await auth();
   const success = searchParams['success']
+  const canceled = searchParams['canceled']
 
 
   return (
@@ -14,6 +15,11 @@ export default async function Page({ searchParams }: { searchParams: { [key: str
       {success === 'true' &&
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         Thank you {user?.user?.name} for your payment
+      </div>
+      }
+      {canceled === 'true' &&
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        Sorry {user?.user?.name}, your payment was refused
       </div>
       }
     </main>

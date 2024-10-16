@@ -1,5 +1,5 @@
 import VideoThumb from '../public/images/hero-image-01.jpg';
-import ModalVideo from './modal-video';
+import Image from 'next/image';
 
 
 export default function Hero() {
@@ -36,18 +36,24 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={1024}
-            thumbHeight={576}
-            thumbAlt="Modal video thumbnail"
-            video="/videos/video.mp4"
-            videoWidth={1920}
-            videoHeight={1080} />
-
+          <div>
+            <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+              <Image src={VideoThumb} width={1024} height={576} alt="Modal video thumbnail" className='rounded-2xl'/>
+              <button className="absolute group" aria-label="Watch the video">
+                <svg className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
+                      <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
+                      <stop stopColor="#EBF1F5" offset="100%" />
+                    </linearGradient>
+                  </defs>
+                  <circle fill="url(#a)" cx="44" cy="44" r="44" />
+                  <path className="fill-current text-purple-600" d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
