@@ -55,7 +55,7 @@ Run the project :
 ```bash
 pnpm run dev
 ```
-open [http://localhost:3000/landing-page](http://localhost:3000/landing-page) to see the result
+open [http://localhost:3000/](http://localhost:3000/) to see the result
 
 #### Production
 For production, we recommend using vercel (see below)
@@ -94,8 +94,8 @@ We user [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-f
 More info in our [prisma/README.md file](prisma/README.md)
 
 #### Landing Page
-Once you run the project, you can access the landing page at `http://localhost:3000/landing-page`
-Feel free to customize it as you want (folder `/landing-page`).
+Once you run the project, you can access the landing page at `http://localhost:3000/`
+Feel free to customize it as you want (folder `(landing-page)`).
 
 #### Auth
 Google Auth is already set up. To use it. please follow this [guide](https://authjs.dev/getting-started/authentication/oauth) TLDR, it begins with creating a project on the [Google Cloud Platform](https://console.cloud.google.com/apis/credentials).  
