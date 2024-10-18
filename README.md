@@ -1,6 +1,6 @@
-# NextJS Boilerplate for SoloPreneurs
+# Next.js Boilerplate for SoloPreneurs
 
-Starter Kit to build your idea with all you need to `earn $ in 1 hour`.
+A Next.js Starter Kit to build your idea with all you need to `earn $ in 1 hour`.
 
 ![Landing Page](public/landingFeatures.png)
 
@@ -18,14 +18,14 @@ Starter Kit to build your idea with all you need to `earn $ in 1 hour`.
 - 📚 Documentation ⏳
 - 🫂 Customer support (chatwoot) ⏳
 - 📱 Responsive
-- 🍾 Referal program ⏳
+- 🍾 Referral program ⏳
 - 🛠️ Customizable
 
 ⏳: Coming soon
 
-### Why
+### Why Choose This Next.js Boilerplate
 
-As a solo founder, you need to focus on your product, not the stupid integrations with Stripe, Database, Auth... This boilerplate is designed to help you bypass this and build and publish your product in a day.
+As a solo founder, you need to focus on your product, not the tedious integrations with Stripe, Database, Auth, etc. This Next.js starter kit is designed to help you bypass these tasks and build and publish your product in a day.
 
 As calculated by Marc Lou, the great inspiration for this project, the time saved is huge: **22 hours**
 
