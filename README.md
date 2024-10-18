@@ -1,11 +1,13 @@
 # NextJS Boilerplate for SoloPreneurs
 
-Starter Kit to build SaaS, webapp, AI tool... with all you need to `earn $ in 1 day`.
+Starter Kit to build your idea with all you need to `earn $ in 1 hour`.
+
+![Landing Page](public/landingFeatures.png)
 
 ### Main Features
 
 - ☀️ Free
-- 👁️ Landing page
+- 👁️ [Landing page](https://nextjsboilerplate-blue.vercel.app/)
 - 🔑 Google SSO (NextAuth)
 - 💰 Stripe for payments
 - 📂 Postgres with Prisma 
@@ -47,45 +49,40 @@ But if you want to support the project, you can [buy me a coffee ☕️](https:/
 I tried to reduce the costs to `0 $` so that you can iterate on 10 products without ruining yourself !
 
 ## Get Started
-Install dependencies :
+Setup your environment : 
+_Copy the file `.env.example` to `.env` and fill in the variables_
+
+#### Development
+Install dependencies and run the project :
 ```bash
 pnpm install
-```
-Run the project :
-```bash
 pnpm run dev
 ```
+
 open [http://localhost:3000/](http://localhost:3000/) to see the result
 
 #### Production
 For production, we recommend using vercel (see below)
 ```bash
 pnpm run build
+pnpm run start
 ```
 ## Tech Stack
 
 It's all Typescript
 It's the App Router type of Next.js project
-It uses Postgres, hosted on Neon for the database, but you can change it if you want.
+It uses Postgres, hosted on [Neon](https://neon.tech/) for the database, but you can change it if you want.
 It's documented to guide you through the process of customizing it.
 It's React for the frontend, with TailwindCSS for the design.
-It's going to be hosted on Vercel, but you can change it if you want.
+It's easy to be host on [Vercel](https://vercel.com/), but you can change it.
 It will be automatically deployed on git push, no worries about that, focus on code.
 
-#### VScode
 
-We recommend using VScode for the project, as it's the most popular editor for web development.
-ESlint is automatic on save to get a better developer experience.
-
-#### Github Repository
-
-To host your code on Github, please follow this [guide](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
-
-#### Vercel
+- Vercel
 
 Visit [vercel](https://vercel.com/signup) to create an account. Choose the free "hobby" plan. Select Continue with GitHub to connect your GitHub and Vercel accounts. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database) if you are stuck
 
-#### Neon
+- Neon
 
 We do not chose Vercel Postgresql because it's not free. Neon is a great alternative, and it's free. Visit [supabase](https://neon.tech/) to create an account. Choose the free plan. Read [this page](https://neon.tech/docs/guides/nextjs)
 
@@ -93,16 +90,23 @@ We user [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-f
 
 More info in our [prisma/README.md file](prisma/README.md)
 
-#### Landing Page
-Once you run the project, you can access the landing page at `http://localhost:3000/`
-Feel free to customize it as you want (folder `(landing-page)`).
+- Landing Page
 
-#### Auth
+Once you run the project, you can access the landing page at `http://localhost:3000/`
+Feel free to customize it as you want in the folder `(landing-page)`.
+
+![Landing Page](public/landing.png)
+
+- Auth
+
 Google Auth is already set up. To use it. please follow this [guide](https://authjs.dev/getting-started/authentication/oauth) TLDR, it begins with creating a project on the [Google Cloud Platform](https://console.cloud.google.com/apis/credentials).  
 
 We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introduction) for other easy ways to authenticate users (google, twitter, github...)
 
-#### Stripe
+![Landing Page](public/sso.png)
+
+- Stripe
+
 We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
 To make things simpler, Stripe is related to a company, not a user here. So, for every user, a company is automatically created. 
 
@@ -116,8 +120,18 @@ Here, you simply need to add this button to make the payment work (change for th
         description="Basic Plan" />
 ```
 
-#### Google Analytics
+- Google Analytics
+
 We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the .env file
+
+- IDE
+
+We recommend using VScode for the project, as it's the most popular editor for web development.
+ESlint is automatic on save to get a better developer experience.
+
+- Github Repository
+
+To host your code on Github, please follow this [guide](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
 
 
 ### Thanks
@@ -125,4 +139,5 @@ We use Google Analytics to track the users. Please create an account here [Googl
 It's based on the Next.js (App Router) starter template.
 For customisation, see the [course](https://nextjs.org/learn) on the Next.js Website.
 
-setup test for usecasess
+### License
+MIT
