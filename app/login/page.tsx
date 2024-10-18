@@ -4,6 +4,7 @@ import { auth } from '@/auth';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import LogoutButton from '../ui/logout-button';
+import { providersList } from '@/infra/providerDetector';
 
 export default async function LoginPage() {
   const user = await auth();
@@ -29,7 +30,10 @@ export default async function LoginPage() {
             </Link>
           </div>
         ) : (
-          <LoginForm />
+          (providersList.googleAuth.isAvailable) ?
+            <LoginForm /> :
+            <p>Google Auth not configured. Have a look at <a href="/env.example">/env.example</a> to understand how to configure required services. More info on the setup <a href="/README.md">here</a> </p>
+
         )}
       </div>
     </main>

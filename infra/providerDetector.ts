@@ -11,7 +11,7 @@ export const providersList = {
   },
   googleAuth: {
     name: "Google Auth",
-    isAvailable: true,
+    isAvailable: !!process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_ID !== '',
     optional: false,
   },
   googleAnalytics: {
