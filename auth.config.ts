@@ -10,7 +10,7 @@ export const authConfig = {
   callbacks: {
     authorized({ auth, request }) {
       // if visiting landing page, it's ok
-      if (request.nextUrl.pathname === '/landing-page') return true
+      if (request.nextUrl.pathname === '/') return true
       // Logged in users are authenticated, otherwise redirect to login page
       return (auth && !!auth.user) ? true : false;
     },
