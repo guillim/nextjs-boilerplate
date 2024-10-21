@@ -22,6 +22,11 @@ export default async function Page({ searchParams }: { searchParams: { [key: str
         Sorry {user?.user?.name}, your payment was refused
       </div>
       }
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        Here, you can define your subscription plans. This button shows how a user can pay for your service.
+      
+        
+      </div>
     </main>
   );
 }
