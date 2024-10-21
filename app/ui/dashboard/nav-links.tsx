@@ -2,6 +2,7 @@
 import {
   HomeIcon,
   BanknotesIcon,
+  UserIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,6 +13,7 @@ import clsx from 'clsx';
 const links = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
   { name: 'Billing', href: '/billing', icon: BanknotesIcon },
+  { name: 'Account', href: '/account', icon: UserIcon },
 ];
 
 export default function NavLinks() {
