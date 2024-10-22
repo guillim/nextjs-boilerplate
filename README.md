@@ -56,6 +56,7 @@ _Copy the file `.env.example` to `.env` and fill in the variables_
 Install dependencies and run the project :
 ```bash
 pnpm install
+npx prisma migrate dev --name init
 pnpm run dev
 ```
 
