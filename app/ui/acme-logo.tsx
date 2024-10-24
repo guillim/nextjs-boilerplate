@@ -9,11 +9,11 @@ export default function AcmeLogo() {
       <Image
         src={Logo}
         alt="Logo"
-        width={32}
-        height={32}
+        width={30}
+        height={30}
         className="h-8 bg-white rounded-full max-w-fit"
       />
-      <p className="text-[44px]">Acme</p>
+      <p className="text-[20px]">Acme</p>
     </div>
   );
 }
