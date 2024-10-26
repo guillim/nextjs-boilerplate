@@ -8,7 +8,7 @@ export default async function Page() {
   return (
     <main>
       
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Your Account</h1>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl font-semibold`}>Account</h1>
       <div>  
         <div>You are logged in as {user?.user?.email}</div>
         <div>If you want to sign out, click here</div>
