@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default async function Page() {
   const user = await auth();
   const name = user?.user?.name || user?.user?.email;
-  await new Promise((resolve) => setTimeout( x => resolve(x), 2000));
+  // await new Promise((resolve) => setTimeout( x => resolve(x), 2000));
 
   return (
     <main>
