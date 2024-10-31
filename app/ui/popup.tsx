@@ -14,10 +14,12 @@ export default function Popup(
       <span className={"max-w-2xl margin-auto text-gray-500 text-sm "+className}
         onClick={() => setIsOpen(true)}
       >
-        {hideIcon &&
-        <InformationCircleIcon className={"h-4 w-4 text-gray-500 mr-1"} />
-        }
-        {btnText}
+        <span className='flex items-center'>
+          {!hideIcon &&
+            <InformationCircleIcon className={"h-4 w-4 text-gray-500 mr-1"} />
+          }
+          {btnText}
+        </span>
       </span>
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">

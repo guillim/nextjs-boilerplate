@@ -15,6 +15,10 @@ const SubscribeComponent= ({ priceId }: props) => {
     if (!stripe) {
       return;
     }
+    if (priceId === 'price_1Q6U4ZP9VWutz4pQA1UC2ilX') {
+      console.log('You need to change the priceId to make this button work, you are currently using the default priceId');
+      return
+    }
     try {
       const response = await axios.post('/api/payment/checkout_sessions', {
         priceId: priceId

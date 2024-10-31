@@ -62,6 +62,8 @@ export async function POST(request: NextRequest) {
     if(!transactionDetails) throw new Error('Transaction details not found');
     await registerTransaction.registerTransaction(transactionDetails);
     // console.log('Transaction Details', transactionDetails);
+    // here we can create a Subscription model, and add all paid user's subscription details
+    // in order to display that in the billing section !
     return new Response('Subscription added', {
       status: 200
     });
