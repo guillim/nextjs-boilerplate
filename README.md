@@ -16,7 +16,7 @@ A Next.js Starter Kit to build your idea with all you need to `earn $ in 1 hour`
 - 📦 SEO ⏳
 - 📝 Blog ⏳
 - 📚 Documentation ⏳
-- 🫂 Customer support (chatwoot) ⏳
+- 🫂 Customer support (chatwoot or chaty) ⏳
 - 📱 Responsive
 - 🍾 Referral program ⏳
 - 🛠️ Customizable
@@ -50,7 +50,7 @@ I tried to reduce the costs to `0 $` so that you can iterate on 10 products with
 
 ## Get Started
 Setup your environment : 
-_Copy the file `.env.example` to `.env` and fill in the variables_
+_Copy the file [.env.example](./.env.example) to [.env](.env) and fill in the variables_
 
 #### Development
 Install dependencies and run the project :
@@ -113,17 +113,42 @@ To make things simpler, Stripe is related to a company, not a user here. So, for
 
 For setup, read this [Stripe Tutorial](https://medium.com/@rakeshdhariwal61/integrating-stripe-payment-gateway-in-next-js-14-a-step-by-step-guide-1bd17d164c2c). Use [the Stripe test card](https://docs.stripe.com/testing) for testing.
 
-Here, you simply need to add this button to make the payment work (change for the correct priceId):
+
+![billing section](public/billing-screenshot.png)
+
+<details>
+<summary>One click button</summary>
+
+How to integrate Stripe button ? You simply need to add this to make the payment work (just change for the correct priceId):
 ```react
 <SubscribeComponent 
         priceId="price_1Q6U4ZP9VWutz4pQA1UC2ilX" 
         price="10" 
         description="Basic Plan" />
 ```
+This is already included in the [billing](/billing) page
+
+</details>
+
+<details>
+<summary>Customer Portal</summary>
+
+Don't worry about handling invoices and managing subscriptions. Stripe has a [customer portal](https://stripe.com/docs/billing/subscriptions/customer-portal) doing that for you. 
+
+You users can connect directly with their email, it looks like this: [https://billing.stripe.com](https://billing.stripe.com/p/session/test_YWNjdF8xR3kxaUZBbHF2S3B4SkN1LF9SOEN5QTN0aGVrNFpWTHExWWNMaW1EWnE5Y29tOE1o0100dW7QNfxX)
+
+This is already included in the [billing](/billing) page
+
+</details>
+
 
 - Google Analytics
 
-We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the .env file
+We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the [.env](./.env) file
+```markdown
+# Google Analytics
+GOOGLE_ANALYTICS_ID=G-xxxxxxx
+```
 
 - IDE
 
