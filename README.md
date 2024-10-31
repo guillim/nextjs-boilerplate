@@ -85,7 +85,7 @@ Visit [vercel](https://vercel.com/signup) to create an account. Choose the free 
 
 - Neon
 
-We do not chose Vercel Postgresql because it's not free. Neon is a great alternative, and it's free. Visit [supabase](https://neon.tech/) to create an account. Choose the free plan. Read [this page](https://neon.tech/docs/guides/nextjs)
+We do not chose Vercel Postgresql because it's not free. Neon is a great alternative, and it's free. Visit [Neon](https://neon.tech/) to create an account. Choose the free plan. Read [this page](https://neon.tech/docs/guides/nextjs)
 
 We user [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql) to connect to the database. Very useful to be error-proof.
 
