@@ -8,16 +8,16 @@ A Next.js Starter Kit to build your idea with all you need to `earn $ in 1 hour`
 
 - ☀️ Free
 - 👁️ [Landing page](https://nextjsboilerplate-blue.vercel.app/)
-- 🔑 Google SSO (NextAuth)
+- 🔑 [Google SSO](https://nextjsboilerplate-blue.vercel.app/login) (NextAuth)
 - 💰 Stripe for payments
 - 📂 Postgres with Prisma 
 - 📈 Google Analytics
-- 📧 Mailgun ⏳
+- 📱 Responsive
+- 📧 Mailgun
 - 📦 SEO ⏳
 - 📝 Blog ⏳
 - 📚 Documentation ⏳
 - 🫂 Customer support (chatwoot or chaty) ⏳
-- 📱 Responsive
 - 🍾 Referral program ⏳
 - 🛠️ Customizable
 
@@ -44,9 +44,11 @@ This boilerplate is forever **Free**
 
 But if you want to support the project, you can [buy me a coffee ☕️](https://patreon.com/guillim).
 
-### Costs
+**Costs of Providers**
 
-I tried to reduce the costs to `0 $` so that you can iterate on 10 products without ruining yourself !
+Running this project should costs `0 $`. The idea is you can test 10 products without ruining yourself !
+
+That's why I only selected providers (see [tech stack](#tech-stack) below) with a good free tier (at the time I selected them of course).
 
 ## Get Started
 Setup your environment : 
@@ -79,11 +81,11 @@ It's easy to be host on [Vercel](https://vercel.com/), but you can change it.
 It will be automatically deployed on git push, no worries about that, focus on code.
 
 
-- Vercel
+- Hosting : Vercel
 
 Visit [vercel](https://vercel.com/signup) to create an account. Choose the free "hobby" plan. Select Continue with GitHub to connect your GitHub and Vercel accounts. Read [this page](https://nextjs.org/learn/dashboard-app/setting-up-your-database) if you are stuck
 
-- Neon
+- 📂 Database : Neon
 
 We do not chose Vercel Postgresql because it's not free. Neon is a great alternative, and it's free. Visit [Neon](https://neon.tech/) to create an account. Choose the free plan. Read [this page](https://neon.tech/docs/guides/nextjs)
 
@@ -93,12 +95,12 @@ More info in our [prisma/README.md file](prisma/README.md)
 
 - Landing Page
 
-Once you run the project, you can access the landing page at `http://localhost:3000/`
+Once you run the project, you can access the landing page at [localhost:3000](http://localhost:3000/).
 Feel free to customize it as you want in the folder `(landing-page)`.
 
 ![Landing Page](public/landing.png)
 
-- Auth
+- 🔑 Auth
 
 Google Auth is already set up. To use it. please follow this [guide](https://authjs.dev/getting-started/authentication/oauth) TLDR, it begins with creating a project on the [Google Cloud Platform](https://console.cloud.google.com/apis/credentials).  
 
@@ -106,7 +108,7 @@ We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introdu
 
 ![Landing Page](public/sso.png)
 
-- Stripe
+- 💰 Payment : Stripe
 
 We use Stripe for payments. Please create an account here [Stripe](https://stripe.com/).
 To make things simpler, Stripe is related to a company, not a user here. So, for every user, a company is automatically created. 
@@ -140,9 +142,9 @@ You users can connect directly with their email, it looks like this: [https://bi
 This is already included in the [billing](/billing) page
 
 </details>
+<br/>
 
-
-- Google Analytics
+- 📈 Google Analytics
 
 We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the [.env](./.env) file
 ```markdown
@@ -150,12 +152,31 @@ We use Google Analytics to track the users. Please create an account here [Googl
 GOOGLE_ANALYTICS_ID=G-xxxxxxx
 ```
 
-- IDE
+- ✉️ Email : Mailgun
+Mailgun offers 100 free emails per day which is the biggest free plan we found during our research. Create an account [here](https://signup.mailgun.com/new/signup?plan_name=dev_free&currency=USD). 
+    - Create an API key in the [API key section](https://app.mailgun.com/settings/api_security)
+    - Then add it to the [.env](./.env) file
+    - then adapt this piece of code to your needs, but make sure you change 'mail.mydomain.com' to your mail domain as setup in mailgun:
+```ts
+// On your pages/api routes:
+import { mailgunClientGlobal } from '@/infra/mailgun';
+const mg = await mailgunClientGlobal
+await mg.mailgun?.messages.create(
+  'mail.mydomain.com',
+  {...mg.getDefaultValues(), 
+    from: 'Excited User <mailgun@mail.mydomain.com>',
+    to: ['contact@mydomain.uk'] }
+);
+```
+Note : If your mail server in not in europe, you may comment out one line here : [mailgun.ts](./infra/mailgun.ts) 
+`url: 'https://api.eu.mailgun.net'` since it's specific for EU servers.
+
+- IDE : VScode
 
 We recommend using VScode for the project, as it's the most popular editor for web development.
 ESlint is automatic on save to get a better developer experience.
 
-- Github Repository
+- Code hosting : Github Repository
 
 To host your code on Github, please follow this [guide](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
 

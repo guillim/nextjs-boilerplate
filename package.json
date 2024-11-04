@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "//": "build : we need to add prisma generate due to vercel deployment", 
+    "//": "build : we need to add prisma generate due to vercel deployment",
     "build": "prisma generate && next build",
     "dev": "next dev",
     "lint": "next lint",
@@ -20,6 +20,8 @@
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
+    "form-data": "^4.0.1",
+    "mailgun.js": "^10.2.3",
     "next": "14.2.14",
     "next-auth": "5.0.0-beta.22",
     "postcss": "8.4.38",

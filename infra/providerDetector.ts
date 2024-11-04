@@ -30,4 +30,9 @@ export const providersList = {
     isAvailable: process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY !== undefined,
     optional: true,
   },
+  mailgun: {
+    name: "Mailgun",
+    isAvailable: process.env.MAILGUN_API_KEY !== undefined,
+    optional: true,
+  },
 }
