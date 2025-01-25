@@ -18,7 +18,13 @@ export const providersList = {
     name: "Google Analytics",
     isAvailable: process.env.NODE_ENV === 'production' && process.env.GOOGLE_ANALYTICS_ID !== undefined,
     optional: true,
-    id: process.env.GOOGLE_ANALYTICS_ID as string,
+    id: process.env.GOOGLE_ANALYTICS_ID || '',
+  },
+  googleTagManager: {
+    name: "Google Tag Manager",
+    isAvailable: process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID !== undefined,
+    id : process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID || '',
+    optional: true,
   },
   landingPage: {
     name: "Landing Page",

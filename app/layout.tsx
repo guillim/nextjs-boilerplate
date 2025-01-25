@@ -1,8 +1,9 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
-import GoogleAnalyticsWrapper from '../infra/googleAnalytics';
- 
+import GoogleAnalyticsWrapper from '@/infra/googleAnalytics';
+import GoogleTagManagerWrapper from '@/infra/googleTagManager';
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Dashboard',
@@ -20,9 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <GoogleAnalyticsWrapper />
+        <GoogleTagManagerWrapper />
         {children}
       </body>
-      <GoogleAnalyticsWrapper />
     </html>
   );
 }
