@@ -149,7 +149,7 @@ This is already included in the [billing](/billing) page
 We use Google Analytics to track the users. Please create an account here [Google Analytics](https://analytics.google.com/). Then add your id in the [.env](./.env) file
 ```markdown
 # Google Analytics
-GOOGLE_ANALYTICS_ID=G-xxxxxxx
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-xxxxxxx
 ```
 
 - ✉️ Email : Mailgun
