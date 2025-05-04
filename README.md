@@ -17,6 +17,7 @@ A Next.js Starter Kit to build your idea with all you need to `earn $ in 1 hour`
 - 📦 SEO ⏳
 - 📝 Blog ⏳
 - 📚 Documentation ⏳
+- 🔑 Customer support : impersonation
 - 🫂 Customer support (chatwoot or chaty) ⏳
 - 🍾 Referral program ⏳
 - 🛠️ Customizable
@@ -107,6 +108,9 @@ Google Auth is already set up. To use it. please follow this [guide](https://aut
 We recommend reading [NextAuth](https://next-auth.js.org/getting-started/introduction) for other easy ways to authenticate users (google, twitter, github...)
 
 ![Landing Page](public/sso.png)
+
+
+Impersonation: For better support, you can log in as any user. Simply add your own user ID to **.env** `NEXT_PUBLIC_ADMIN_USER_ID=` and visit [/login/impersonate](/login/impersonate)
 
 - 💰 Payment : Stripe
 
