@@ -51,6 +51,12 @@ Running this project should costs `0 $`. The idea is you can test 10 products wi
 
 That's why I only selected providers (see [tech stack](#tech-stack) below) with a good free tier (at the time I selected them of course).
 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=guillim/nextjs-boilerplate&type=Date)](https://www.star-history.com/#guillim/nextjs-boilerplate&Date)
+
+
 ## Get Started
 Setup your environment : 
 _Copy the file [.env.example](./.env.example) to [.env](.env) and fill in the variables_
