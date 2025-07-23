@@ -6,31 +6,35 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+   url      = env("DATABASE_URL")
+
 }
 
 model User {
-  id            String          @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
-  email         String          @unique
+  email         String    @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
-  sessions      Session[] 
-  company       Company?   @relation(fields: [companyId], references: [id])
+  sessions      Session[]
+  company       Company?  @relation(fields: [companyId], references: [id])
   companyId     String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt @default(now())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now()) @updatedAt
 }
 
 model Company {
-  id          String    @id @default(cuid())
-  name        String
-  users       User[]    @relation
-  transactions PaymentTransaction[]
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt @default(now())
+  id                 String               @id @default(cuid())
+  name               String
+  users              User[]               @relation
+  transactions       PaymentTransaction[]
+  creditTransactions CreditTransaction[]
+  creditBalance      Int                  @default(0) // positive balance
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @default(now()) @updatedAt
 }
+
 model Account {
   userId            String
   type              String
@@ -43,38 +47,53 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   @@id([provider, providerAccountId])
 }
- 
+
 model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 model VerificationToken {
   identifier String
   token      String
   expires    DateTime
- 
+
   @@id([identifier, token])
 }
 
 model PaymentTransaction {
-  id            String    @id @default(cuid())
-  company       Company   @relation(fields: [companyId], references: [id])
-  companyId     String
-  raw           Json
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt @default(now())
+  id                  String            @id @default(cuid())
+  company             Company           @relation(fields: [companyId], references: [id])
+  companyId           String
+  raw                 Json
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @default(now()) @updatedAt
+  creditTransactionId String
+  creditTransaction   CreditTransaction @relation(fields: [creditTransactionId], references: [id])
+}
+
+model CreditTransaction {
+  id        String  @id @default(cuid())
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
+  amount    Int // positive for “top‑up”, negative for “usage”
+  type      String // e.g. "PURCHASE", "USAGE", "ADJUSTMENT"
+  reference String? // e.g. paymentTransactionId, invoiceId, etc.
+
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @default(now()) @updatedAt
+  PaymentTransaction PaymentTransaction[]
 }

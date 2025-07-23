@@ -1,9 +1,33 @@
+import { toast, Renderable, ToastPosition } from 'react-hot-toast'
+
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 };
+
+export const showToast = (text: string, type: 'success' | 'error' | "custom", duration?: number, position?: ToastPosition, icon?: Renderable) => {
+  if (type === 'success') {
+    toast.success(text, {
+      duration: duration,
+      position: position
+    })
+
+  } else if (type === 'error') {
+    toast.error(text, {
+      duration: duration,
+      position: position
+    })
+  } else if (type === 'custom') {
+    toast.success(text, {
+      duration: duration,
+      position: position,
+      icon
+    })
+  }
+}
+
 
 export const formatDateToLocal = (
   dateStr: string,

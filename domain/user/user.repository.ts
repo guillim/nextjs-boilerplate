@@ -3,6 +3,8 @@
 import { UserPort } from './user.port';
 import { User, UserProps } from './user.entity';
 import { prismaClientGlobal } from '@/infra/prisma';
+import { CompanyProps } from '../company/company.entity';
+
 
 const prisma = prismaClientGlobal;
 
@@ -81,6 +83,27 @@ export class UserRepository implements UserPort {
     return new User({
       ...userRecord
     });
+  }
+
+  async getUserCompany(userId: string): Promise<CompanyProps | undefined> {
+    const userRecord = await prisma.user.findUnique({
+      where: { id: userId },
+      include: { company: true },
+    });
+
+    if (!userRecord || !userRecord.company) {
+      return undefined;
+    }
+
+    // console.log("User's company found:", userRecord.company);
+
+    return {
+      id: userRecord.company.id,
+      creditBalance: userRecord.company.creditBalance,
+      name: userRecord.company.name,
+      createdAt: userRecord.company.createdAt,
+      updatedAt: userRecord.company.updatedAt,
+    };
   }
 
 }

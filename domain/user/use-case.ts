@@ -1,5 +1,5 @@
 // clean architecture : use-case layer is where you want to put all your logic, because it will be easily testable and maintanalbe
-import { Company } from '../company/company.entity';
+import { Company, CompanyProps } from '../company/company.entity';
 import { CreateCompany } from '../company/use-case';
 import { User, UserProps } from './user.entity';
 import { UserRepository } from './user.repository';
@@ -31,6 +31,16 @@ export class GetUserByEmail {
   async getUserByEmail(email: string): Promise<User | undefined> {
     const user = await new UserRepository().getUserByEmail(email);
     return user;
+  }
+}
+
+export class GetUserCompany {
+  async getUserCompany(userId: string): Promise<CompanyProps | undefined> {
+    const company = await new UserRepository().getUserCompany(userId);
+
+    console.log("User's company found:", company);
+    return company;
+
   }
 }
 
