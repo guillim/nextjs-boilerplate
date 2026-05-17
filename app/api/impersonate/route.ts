@@ -15,11 +15,11 @@ export async function POST(request: Request) {
       );
     }
 
-    // Verify admin user
-    const ADMIN_USER_ID = process.env.NEXT_PUBLIC_ADMIN_USER_ID;
+    // Verify admin user — use server-side ADMIN_USER_ID (not NEXT_PUBLIC_)
+    const ADMIN_USER_ID = process.env.ADMIN_USER_ID;
     if (!ADMIN_USER_ID) {
       return NextResponse.json(
-        { error: 'Admin user not configured' },
+        { error: 'Admin user not configured — set ADMIN_USER_ID env variable' },
         { status: 500 }
       );
     }
@@ -43,10 +43,20 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create session for the user
+    // Use internal admin token to prevent direct credential attacks
+    const INTERNAL_ADMIN_TOKEN = process.env.INTERNAL_ADMIN_TOKEN;
+    if (!INTERNAL_ADMIN_TOKEN) {
+      return NextResponse.json(
+        { error: 'Internal admin token not configured — generate with: openssl rand -base64 32' },
+        { status: 500 }
+      );
+    }
+
+    // Create session for the user via the credentials provider
     await signIn('credentials', {
       email: user.email,
       id: user.id,
+      adminToken: INTERNAL_ADMIN_TOKEN,
       redirect: false,
     });
 
